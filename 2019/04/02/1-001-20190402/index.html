@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lix1051816102.github.io">
-  <title>Hello World | Lix&#39;s Blog</title>
+  <title>如何在MAC系统下从无到有搭建起自己的个人博客（GITHUB+HEXO） | Lix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="此篇只针对于Mac系统上个人博客的搭建，有官方文档的都不再进行详细阐述 一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）1、首先当然是要有一台装有Mac系统的电脑了，本人Mac系统version为macOS 10.14.4.2、安装nvm(Node Version Manager)，详细安装步骤参考官方文档，在这里不进行详细阐述，下面是我使用的安装命令：1curl">
+<meta name="keywords" content="nodeJS,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://lix1051816102.github.io/2019/03/30/hello-world/index.html">
+<meta property="og:title" content="如何在MAC系统下从无到有搭建起自己的个人博客（GITHUB+HEXO）">
+<meta property="og:url" content="https://lix1051816102.github.io/2019/04/02/1-001-20190402/index.html">
 <meta property="og:site_name" content="Lix&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="此篇只针对于Mac系统上个人博客的搭建，有官方文档的都不再进行详细阐述 一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）1、首先当然是要有一台装有Mac系统的电脑了，本人Mac系统version为macOS 10.14.4.2、安装nvm(Node Version Manager)，详细安装步骤参考官方文档，在这里不进行详细阐述，下面是我使用的安装命令：1curl">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-03-30T14:05:38.194Z">
+<meta property="og:image" content="https://lix1051816102.github.io/assets/img/blog/1_001_20190402/01.jpg">
+<meta property="og:image" content="https://lix1051816102.github.io/assets/img/blog/1_001_20190402/02.jpg">
+<meta property="og:updated_time" content="2019-04-13T13:37:46.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="如何在MAC系统下从无到有搭建起自己的个人博客（GITHUB+HEXO）">
+<meta name="twitter:description" content="此篇只针对于Mac系统上个人博客的搭建，有官方文档的都不再进行详细阐述 一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）1、首先当然是要有一台装有Mac系统的电脑了，本人Mac系统version为macOS 10.14.4.2、安装nvm(Node Version Manager)，详细安装步骤参考官方文档，在这里不进行详细阐述，下面是我使用的安装命令：1curl">
+<meta name="twitter:image" content="https://lix1051816102.github.io/assets/img/blog/1_001_20190402/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lix&#39;s Blog" type="application/atom+xml">
   
@@ -35,6 +39,16 @@
   
 
   
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?1a13aef16863035991ef9d51775f6c04";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
 </head>
 </html>
@@ -43,7 +57,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #3A006F"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -59,37 +73,37 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/">HOMEPAGE</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">ARTICLES</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">FRIENDS</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">ABOUT ME</a>
     			
             
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="bilibili" target="_blank" href="https://www.bilibili.com" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
+					<a class="mail" target="_blank" href="https://mail.163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -100,7 +114,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #3A006F"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -119,20 +133,20 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="bilibili" target="_blank" href="https://www.bilibili.com" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
+						<a class="mail" target="_blank" href="https://mail.163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -141,9 +155,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">HOMEPAGE</a></li>
 		        
 				</ul>
 			</nav>
@@ -158,35 +170,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-1-001-20190402" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      如何在MAC系统下从无到有搭建起自己的个人博客（GITHUB+HEXO）
     </h1>
   
 
         
-        <a href="/2019/03/30/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-30T14:05:38.194Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-30</time>
+        <a href="/2019/04/02/1-001-20190402/" class="archive-article-date">
+  	<time datetime="2019-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p><strong>此篇只针对于Mac系统上个人博客的搭建，有官方文档的都不再进行详细阐述</strong></p>
+<h2 id="一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）"><a href="#一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）" class="headerlink" title="一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）"></a>一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）</h2><p>1、首先当然是要有一台装有Mac系统的电脑了，本人Mac系统version为macOS 10.14.4.<br>2、安装nvm(Node Version Manager)，详细安装步骤参考<a href="https://github.com/creationix/nvm/blob/master/README.md" target="_blank" rel="noopener">官方文档</a>，在这里不进行详细阐述，下面是我使用的安装命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure></p>
+<p>3、使用nvm安装nodeJS，详细安装步骤参考<a href="https://github.com/creationix/nvm/blob/master/README.md" target="_blank" rel="noopener">官方文档</a>，下面是我使用的安装命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install node <span class="comment"># 默认安装最新版本的node</span></span><br></pre></td></tr></table></figure></p>
+<p>4、我们需要用到一个Mac系统的套件安装神器Homebrew，以方便下面git等套件的管理，详细参考<a href="https://brew.sh" target="_blank" rel="noopener">官方文档</a>，下面是我使用的安装命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>5、接下来我们可以开始安装git了，很简单，使用以下命令安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure></p>
+<p>6、上面这么多的准备工作，终于步入了正题；下面开始安装Hexo，同样我们可以参考<a href="https://hexo.io/docs/" target="_blank" rel="noopener">官方文档</a>，下面是我使用的安装命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<p>7、在初始化Hexo之前，还需要指定一个安装目录比如Blog，然后执行安装命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong><em>此时在执行npm install命令时遇到了第一个坑，系统报如下问题：</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">found 3 vulnerabilities (2 low, 1 moderate)</span><br><span class="line">run `npm audit fix` to fix them, or `npm audit` for details</span><br></pre></td></tr></table></figure></p>
+<p>虽然不影响后续的运行，但是对于有点代码强迫症的我来说看着真不舒服。按照给出的建议执行sudo npm audit fix命令后，漏洞并没有修复，这就导致了npm install命令总会提示这段信息：<br><br><br><img src="/assets/img/blog/1_001_20190402/01.jpg" alt="图1"><br><br><br>解决方法就是，执行一下npm audit命令可以找到含有漏洞的包，直接定位有问题的模块并修改依赖包的版本即可解决：<br><br><br><img src="/assets/img/blog/1_001_20190402/02.jpg" alt="图2"></p>
+<hr>
 
       
 
@@ -226,7 +240,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodeJS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -276,7 +316,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lix1051816102.github.io/2019/03/30/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lix1051816102.github.io/2019/04/02/1-001-20190402/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -302,6 +342,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）"><span class="toc-number">1.</span> <span class="toc-text">一、环境准备（Mac、NVM、Homebrew、nodeJS、Git、Hexo）</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -324,7 +377,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
   var gitment = new Gitment({
-    id: "Sat Mar 30 2019 22:05:38 GMT+0800",
+    id: "Tue Apr 02 2019 00:00:00 GMT+0800",
     owner: 'lix1051816102',
     repo: 'hexo-blog-comment',
     oauth: {
@@ -399,15 +452,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">ARTICLES</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">FRIENDS</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">ABOUT ME</a></li>
       
         
     </ul>
@@ -426,6 +479,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -476,7 +537,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.baidu.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度一下</a>
             </li>
           
         </ul>
@@ -487,13 +548,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">本人Java攻城狮一枚&lt;br&gt;&lt;br&gt;借用一下前端牛人的Hexo主题</div>
   	  	
     	</section>
     
   </div>
   
 </div>
+
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
