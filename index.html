@@ -168,6 +168,309 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-1-005" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/01/1-005/">《Spring微服务实战》读书笔记一</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/01/1-005/" class="archive-article-date">
+  	<time datetime="2019-07-01T13:01:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！</em></strong></p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">《Spring微服务实战》</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/01/1-005/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1-004" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/01/1-004/">《Spring Boot实战》读书笔记一</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/01/1-004/" class="archive-article-date">
+  	<time datetime="2019-07-01T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！</em></strong></p>
+<hr>
+<blockquote>
+<p>Spring Boot是什么？直接引用书中的内容，最重要的就是以下四个核心：</p>
+<ul>
+<li>自动配置：针对Spring应用常见的应用功能，Spring Boot能自动提供相关配置；</li>
+<li>起步依赖：告诉Spring Boot需要什么功能，它就能自动引入需要的库；</li>
+<li>命令行界面：Spring Boot的可选特性，借此只需写代码就能完成完整的应用程序，无需传统的项目构建；</li>
+<li>Actuator：能够深入运行中的Spring Boot应用程序，用来监控和度量Spring Boot应用程序。</li>
+</ul>
+</blockquote>
+<h1 id="一、入门（第一章）"><a href="#一、入门（第一章）" class="headerlink" title="一、入门（第一章）"></a>一、入门（第一章）</h1><h2 id="1-1、自动配置"><a href="#1-1、自动配置" class="headerlink" title="1.1、自动配置"></a>1.1、自动配置</h2><p>以Spring的数据库配置为例来简单说明一下，传统的Spring项目一定要在应用程序上下文配置JdbcTemplate这个Bean，配置如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> JdbcTemplate <span class="title">jdbcTemplate</span><span class="params">(DataSource dataSource)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> JdbcTemplate(dataSource);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    DriverManagerDataSource dataSource = <span class="keyword">new</span> DriverManagerDataSource();</span><br><span class="line">    dataSource.setUrl(env.getProperty(<span class="string">"url"</span>));</span><br><span class="line">    dataSource.setDriverClassName(env.getProperty(<span class="string">"driverName"</span>));</span><br><span class="line">    dataSource.setUsername(env.getProperty(<span class="string">"datausername"</span>));</span><br><span class="line">    dataSource.setPassword(env.getProperty(<span class="string">"password"</span>));</span><br><span class="line">    <span class="keyword">return</span> dataSource;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Spring Boot会对这些常见配置进行自动配置，如果Spring Boot在应用程序的Classpath里发现JdbcTemplate，那么它会自定配置一个JdbcTemplate的Bean，接下来只需要在application.yml文件中配置一下数据库的相关连接信息就行了。</p>
+<h2 id="1-2、起步依赖"><a href="#1-2、起步依赖" class="headerlink" title="1.2、起步依赖"></a>1.2、起步依赖</h2><blockquote>
+<p>Spring Boot利用Maven和Gradle的传递依赖特性，把常用库聚合在一起，组成了几个为特定功能而定制的依赖。<br>举个例子，我们如果想要构建一个Spring的Web应用程序，传统的Spring需要引入spring-core、spring-web、spring-webmvc等很多依赖才行，而且需要自己管理每一个依赖的版本。但是如果使用Spring Boot的起步依赖，就只需要添加spring-boot-starter-web即可，而且不需要担心版本不兼容的问题，这些都是经过严格测试的。</p>
+</blockquote>
+<h2 id="1-3、命令行界面"><a href="#1-3、命令行界面" class="headerlink" title="1.3、命令行界面"></a>1.3、命令行界面</h2><blockquote>
+<p>Spring Boot CLI利用了自动配置和起步依赖，可以让开发者只专注于代码本身。</p>
+</blockquote>
+<h2 id="1-4、Actuator"><a href="#1-4、Actuator" class="headerlink" title="1.4、Actuator"></a>1.4、Actuator</h2><blockquote>
+<p>Actuator可以窥探到应用程序内部的细节如下：</p>
+<ul>
+<li>Spring应用程序上下文里配置的Bean</li>
+<li>Spring Boot的自动配置做出的决策</li>
+<li>应用程序取到的环境变量、系统属性、配置属性和命令行参数</li>
+<li>应用程序里线程的当前状态</li>
+<li>应用程序最近处理过的HTTP请求的追踪情况</li>
+<li>各种和内存用量、垃圾回收、Web请求以及数据源用量相关的指标</li>
+</ul>
+</blockquote>
+<h2 id="1-5、idea创建Spring-Boot项目"><a href="#1-5、idea创建Spring-Boot项目" class="headerlink" title="1.5、idea创建Spring Boot项目"></a>1.5、idea创建Spring Boot项目</h2><blockquote>
+<p>第一步：使用Spring Initializr<br><br></p>
+<div align="center"><img src="/assets/img/blog/1_004_20190701/01.jpg" alt="图1" width="80%" height="80%"></div><br>第二步：填写项目信息<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/02.jpg" alt="图2" width="80%" height="80%"></div><br>第三步：选择项目依赖<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/03.jpg" alt="图3" width="80%" height="80%"></div><br>第四步：项目命名并完成<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/04.jpg" alt="图4" width="80%" height="80%"></div><br>最终项目结构如下：<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/05.jpg" alt="图5" width="80%" height="80%"></div>
+</blockquote>
+<h1 id="二、总结"><a href="#二、总结" class="headerlink" title="二、总结"></a>二、总结</h1><p>以上是Spring Boot的核心功能整理，以及如何在idea中创建Spring Boot项目，对书中的重点内容进行了提取，仅供参考！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">《Spring Boot实战》</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/01/1-004/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1-003" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/01/1-003/">Java面试整理（自用）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/01/1-003/" class="archive-article-date">
+  	<time datetime="2019-07-01T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！</em></strong></p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/01/1-003/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-1-002" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -181,7 +484,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2019/06/30/1-002/" class="archive-article-date">
-  	<time datetime="2019-06-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
+  	<time datetime="2019-06-30T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
         
       </header>
@@ -193,7 +496,9 @@ var _hmt = _hmt || [];
 <h1 id="一、mysql执行"><a href="#一、mysql执行" class="headerlink" title="一、mysql执行"></a>一、mysql执行</h1><h2 id="1-1、执行语句"><a href="#1-1、执行语句" class="headerlink" title="1.1、执行语句"></a>1.1、执行语句</h2><p>mysql数据库在做优化的时候，往往需要知道SQL语句的执行顺序才能够更好的进行优化。首先mysql有以下执行语句：<br>from、join、on、where、group by、having、select、distinct、order by、limit。</p>
 <p>在这里关于join语句简单介绍一下join的原理，参考自<a href="https://www.cnblogs.com/fudashi/p/7506877.html" target="_blank" rel="noopener">https://www.cnblogs.com/fudashi/p/7506877.html</a>，个人觉得总结的很到位：</p>
 <blockquote>
-<p>下面是join语句的数学集合表示：<br><img src="/assets/img/blog/1_002_20190630/01.jpg" alt="图1"><br><br><br>join语句的连接算法有Nested Loop Join(NLJ)循环嵌套算法和Block Nested Loop Join(BNLJ)块循环嵌套算法，详细的算法说明请参考上面的引用链接；<br>至于如何提高join的效率，可以参考下面的原则：</p>
+<p>下面是join语句的数学集合表示：<br><br></p>
+<p><div align="center"><img src="/assets/img/blog/1_002_20190630/01.jpg" alt="图1" width="80%" height="80%"></div><br></p>
+<p>join语句的连接算法有Nested Loop Join(NLJ)循环嵌套算法和Block Nested Loop Join(BNLJ)块循环嵌套算法，详细的算法说明请参考上面的引用链接；至于如何提高join的效率，可以参考下面的原则：</p>
 <ul>
 <li>小表驱动大表能够减少内循环的次数从而提高连接效率；</li>
 <li>设置合理的缓冲区大小能够提高连接效率；</li>
@@ -219,7 +524,9 @@ var _hmt = _hmt || [];
 <li>执行”order by sumScore”语句，对上一步结果根据sumScore进行升序排列；</li>
 <li>执行”limit 0, 5”语句，对上一步结果进行分页操作；</li>
 </ol>
-<h2 id="1-3、执行计划"><a href="#1-3、执行计划" class="headerlink" title="1.3、执行计划"></a>1.3、执行计划</h2><p>mysql中使用explain命令获取SQL语句的执行计划，例如上述的查询1，执行explain后的结果如下：<br><img src="/assets/img/blog/1_002_20190630/02.jpg" alt="图2"><br><br><br>下面针对explain输出结果字段进行说明，参考自<a href="https://yq.aliyun.com/articles/602513/" target="_blank" rel="noopener">https://yq.aliyun.com/articles/602513/</a>：<br><strong>id:</strong> select查询序列号，id相同，执行顺序由上至下；id不同，id值越大优先级越高；<br><strong>select_type:</strong> 查询数据的操作类型，有如下几种：</p>
+<h2 id="1-3、执行计划"><a href="#1-3、执行计划" class="headerlink" title="1.3、执行计划"></a>1.3、执行计划</h2><p>mysql中使用explain命令获取SQL语句的执行计划，例如上述的查询1，执行explain后的结果如下：</p>
+<p><div align="center"><img src="/assets/img/blog/1_002_20190630/02.jpg" alt="图2"></div><br>下面针对explain输出结果字段进行说明，参考自<a href="https://yq.aliyun.com/articles/602513/" target="_blank" rel="noopener">https://yq.aliyun.com/articles/602513/</a>：</p>
+<p><strong>id:</strong> select查询序列号，id相同，执行顺序由上至下；id不同，id值越大优先级越高；<br><strong>select_type:</strong> 查询数据的操作类型，有如下几种：</p>
 <table>
 <thead>
 <tr>
@@ -346,7 +653,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -362,7 +669,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
         		</li>
       		
 		</ul>
@@ -414,7 +721,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2019/04/02/1-001/" class="archive-article-date">
-  	<time datetime="2019-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
+  	<time datetime="2019-04-02T05:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
 </a>
         
       </header>
@@ -435,24 +742,47 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>found 3 vulnerabilities (2 low, 1 moderate)<br>run <code>npm audit fix</code> to fix them, or <code>npm audit</code> for details</p>
 </blockquote>
-<p>虽然不影响后续的运行，但是对于有点代码强迫症的我来说看着真不舒服。按照给出的建议执行sudo npm audit fix命令后，漏洞并没有修复，这就导致了npm install命令总会提示这段信息：<br><br><br><img src="/assets/img/blog/1_001_20190402/01.jpg" alt="图1"><br><br><br>解决方法就是，执行一下npm audit命令可以找到含有漏洞的包，直接定位有问题的模块并修改依赖包的版本即可解决：<br><br><br><img src="/assets/img/blog/1_001_20190402/02.jpg" alt="图2"></p>
+<p>虽然不影响后续的运行，但是对于有点代码强迫症的我来说看着真不舒服。按照给出的建议执行sudo npm audit fix命令后，漏洞并没有修复，这就导致了npm install命令总会提示这段信息：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/01.jpg" alt="图1" width="80%" height="80%"></div>
+
+<p>解决方法就是，执行一下npm audit命令可以找到含有漏洞的包，直接定位有问题的模块并修改依赖包的版本即可解决：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/02.jpg" alt="图2" width="80%" height="80%"></div>
+
 <p>8、这里列出几个常用的Hexo命令以及简写方式：</p>
 <blockquote>
 <p>hexo n == hexo new 新建posts<br>hexo g == hexo generate 生成可部署代码<br>hexo clean 清空生成的可部署代码<br>hexo s == hexo server 启动本地web服务<br>hexo d == hexo deploy 代码部署到指定到repository</p>
 </blockquote>
 <hr>
 <h2 id="二、安装主题"><a href="#二、安装主题" class="headerlink" title="二、安装主题"></a>二、安装主题</h2><p>1、首先从<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo主题官方网址</a>选择一个中意的主题，搬运请遵守所选主题的LICENSE，不要随意搬运啊！<br>2、选好主题后，我们就可以直接使用git命令clone到自己的博客目录下了；如果想要在搬运来的主题基础上自定义，可以把中意的主题直接fork到自己的GitHub下，然后clone到博客目录下，当然这样就无法直接获取到主题原作者的更新内容了（前提是原作者还在维护这个主题^_^）；至于主题的更新等请参照git的使用方法，例如我搬运的主题：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~Myself/Blog</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure></p>
-<p>3、然后修改Blog目录下的_config.yml文件中的theme属性为yilia，主题通常有也有自己的配置，直接按照主题说明粘贴即可，最终效果如图：<br><br><br><img src="/assets/img/blog/1_001_20190402/03.jpg" alt="图3"></p>
+<p>3、然后修改Blog目录下的_config.yml文件中的theme属性为yilia，主题通常有也有自己的配置，直接按照主题说明粘贴即可，最终效果如图：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/03.jpg" alt="图3" width="80%" height="80%"></div>
+
 <hr>
-<h2 id="三、部署到GitHub（如何使用GitHub请自行百度）"><a href="#三、部署到GitHub（如何使用GitHub请自行百度）" class="headerlink" title="三、部署到GitHub（如何使用GitHub请自行百度）"></a>三、部署到GitHub（如何使用GitHub请自行百度）</h2><p>1、首先在自己的GitHub中新建一个空的repository，名称必须为xxx.github.io(xxx填写自己的GitHub账号)；新建过后进入Settings选项卡，向下拉最终看到如下图所示即可：<br><br><br><img src="/assets/img/blog/1_001_20190402/04.jpg" alt="图4"><br>2、Hexo想要通过git部署到GitHub上，需要安装一个git组件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、部署到GitHub（如何使用GitHub请自行百度）"><a href="#三、部署到GitHub（如何使用GitHub请自行百度）" class="headerlink" title="三、部署到GitHub（如何使用GitHub请自行百度）"></a>三、部署到GitHub（如何使用GitHub请自行百度）</h2><p>1、首先在自己的GitHub中新建一个空的repository，名称必须为xxx.github.io(xxx填写自己的GitHub账号)；新建过后进入Settings选项卡，向下拉最终看到如下图所示即可：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/04.jpg" alt="图4" width="80%" height="80%"></div>
+
+<p>2、Hexo想要通过git部署到GitHub上，需要安装一个git组件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>3、安装完成以后，打开Blog目录下的_config.yml文件，添加或者编辑以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <p>4、接下来就可以使用Hexo命令进行部署了，命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment"># 生成可部署代码</span></span><br><span class="line">hexo d <span class="comment"># 代码部署到指定到repository</span></span><br></pre></td></tr></table></figure></p>
 <hr>
-<h2 id="四、添加评论功能"><a href="#四、添加评论功能" class="headerlink" title="四、添加评论功能"></a>四、添加评论功能</h2><p>1、网上有很多可用的评论功能，但是GitHub搭建的博客当然使用自家的比较好，这里选择Gitment支持并存储博客的评论；<br>首先注册一个<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">OAuth Application</a>，如何注册参考下图：<br><br><br><img src="/assets/img/blog/1_001_20190402/05.jpg" alt="图5"><br>注册成功后会得到如下图所示的Client ID和Client Secret，后面配置时需要用到这两个值：<br><br><br><img src="/assets/img/blog/1_001_20190402/06.jpg" alt="图6"><br>2、然后需要在GitHub中新建一个空的repository，名称随意，用来存储评论生成的issues；<br>3、接下来我们就可以开始修改主题的_config.yml文件，每一个主题的属性命名各有不同，比如yilia主题的如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitment_owner: &apos;xxx&apos;            #你的 GitHub ID</span><br><span class="line">gitment_repo: &apos;hexo-blog-comment&apos;         #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: &apos;9c6d1dd38b44a3f1cccd&apos;                             #client ID</span><br><span class="line">  client_secret: &apos;186f09d7289112612478132849df2b822d509cb0&apos;     #client secret</span><br></pre></td></tr></table></figure></p>
+<h2 id="四、添加评论功能"><a href="#四、添加评论功能" class="headerlink" title="四、添加评论功能"></a>四、添加评论功能</h2><p>1、网上有很多可用的评论功能，但是GitHub搭建的博客当然使用自家的比较好，这里选择Gitment支持并存储博客的评论；<br>首先注册一个<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">OAuth Application</a>，如何注册参考下图：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/05.jpg" alt="图5" width="80%" height="80%"></div>
+
+<p>注册成功后会得到如下图所示的Client ID和Client Secret，后面配置时需要用到这两个值：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/06.jpg" alt="图6" width="80%" height="80%"></div>
+
+<p>2、然后需要在GitHub中新建一个空的repository，名称随意，用来存储评论生成的issues；<br>3、接下来我们就可以开始修改主题的_config.yml文件，每一个主题的属性命名各有不同，比如yilia主题的如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitment_owner: &apos;xxx&apos;            #你的 GitHub ID</span><br><span class="line">gitment_repo: &apos;hexo-blog-comment&apos;         #存储评论的 repo</span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: &apos;9c6d1dd38b44a3f1cccd&apos;                             #client ID</span><br><span class="line">  client_secret: &apos;186f09d7289112612478132849df2b822d509cb0&apos;     #client secret</span><br></pre></td></tr></table></figure></p>
 <p>其实对应的代码部分如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"gitment-ctn"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--英文版--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&lt;link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css"&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&lt;script src="//imsun.github.io/gitment/dist/gitment.browser.js"&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://billts.site/extra_css/gitment.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://billts.site/js/gitment.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  var gitment = new Gitment(&#123;</span></span><br><span class="line"><span class="xml">    id: "<span class="tag">&lt;<span class="name">%=</span> <span class="attr">page.date</span> %&gt;</span>",</span></span><br><span class="line"><span class="xml">    owner: '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.gitment_owner</span> %&gt;</span>',</span></span><br><span class="line"><span class="xml">    repo: '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.gitment_repo</span> %&gt;</span>',</span></span><br><span class="line"><span class="undefined">    oauth: &#123;</span></span><br><span class="line"><span class="xml">      client_id: '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.gitment_oauth.client_id</span> %&gt;</span>',</span></span><br><span class="line"><span class="xml">      client_secret: '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.gitment_oauth.client_secret</span> %&gt;</span>',</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined">  gitment.render('gitment-ctn')</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>4、到此为止基本的Gitment配置就完成了，不过唯一不方便的地方就是每一篇博客都需要自己登陆后初始化评论，如下图所示，登陆自己的GitHub账号后初始化即可：<br><br><br><img src="/assets/img/blog/1_001_20190402/07.jpg" alt="图7"></p>
+<p>4、到此为止基本的Gitment配置就完成了，不过唯一不方便的地方就是每一篇博客都需要自己登陆后初始化评论，如下图所示，登陆自己的GitHub账号后初始化即可：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/07.jpg" alt="图7" width="80%" height="80%"></div>
+
 <hr>
-<h2 id="五、添加百度统计"><a href="#五、添加百度统计" class="headerlink" title="五、添加百度统计"></a>五、添加百度统计</h2><p>1、为了能够监控到博客的访问量等信息，我们可以给博客添加一些分析统计功能，当然相应的工具也很多了，不过目前主要是谷歌和百度使用的比较多，而国内自然也推荐使用百度统计啦！<br>添加<a href="https://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener">百度统计</a>首先需要注册一个百度统计的账号，百度账号不能使用。登录成功后进入管理模块，添加一个自己的网站，如下图所示：<br><br><br><img src="/assets/img/blog/1_001_20190402/08.jpg" alt="图8"><br>2、添加成功后会获取到一段统计代码，把这段代码添加在自己博客的html页面上即可，其中最主要的是hm.src后面的部分：<br><br><br><img src="/assets/img/blog/1_001_20190402/09.jpg" alt="图9"></p>
+<h2 id="五、添加百度统计"><a href="#五、添加百度统计" class="headerlink" title="五、添加百度统计"></a>五、添加百度统计</h2><p>1、为了能够监控到博客的访问量等信息，我们可以给博客添加一些分析统计功能，当然相应的工具也很多了，不过目前主要是谷歌和百度使用的比较多，而国内自然也推荐使用百度统计啦！<br>添加<a href="https://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener">百度统计</a>首先需要注册一个百度统计的账号，百度账号不能使用。登录成功后进入管理模块，添加一个自己的网站，如下图所示：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/08.jpg" alt="图8" width="80%" height="80%"></div>
+
+<p>2、添加成功后会获取到一段统计代码，把这段代码添加在自己博客的html页面上即可，其中最主要的是hm.src后面的部分：</p>
+<div align="center"><img src="/assets/img/blog/1_001_20190402/09.jpg" alt="图9" width="80%" height="80%"></div>
+
 <hr>
 <h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>经过以上的努力奋战后，终于可以坐下来享受书写博客的乐趣了！当然这也是我职业生涯中的第一篇博客，我尽可能的想做到尽善尽美。所有的知识几乎都是搬来搬去，只有转化为自己的知识才是真正的收获，这就让我产生了学习一下前端的想法。作为一个纯后端的Java工程师，对现在的前端知识只是一知半解，已经无法自定义出来自己喜欢的主题以及界面了，只好借前端大牛的主题先拿来用用，后面再进行自定义了。</p>
 
@@ -468,11 +798,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodeJS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -616,11 +946,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodeJS</a>
+                <a href="javascript:void(0)" class="js-tag color1">《Spring Boot实战》</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">《Spring微服务实战》</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">

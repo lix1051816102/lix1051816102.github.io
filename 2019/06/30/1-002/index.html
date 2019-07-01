@@ -9,7 +9,7 @@
   <title>mysql语句的执行 | Lix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  一、mysql执行1.1、执行语句mysql数据库在做优化的时候，往往需要知道SQL语句的执行顺序才能够更好的进行优化。首先mysql有以下执行语句：from、join、on、where、group by、having、select、distinct、order by、limit。 在这里关于join语句简单介绍一下join的原理，参考自">
-<meta name="keywords" content="笔记,mysql">
+<meta name="keywords" content="技术随笔,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql语句的执行">
 <meta property="og:url" content="https://lix1051816102.github.io/2019/06/30/1-002/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://lix1051816102.github.io/assets/img/blog/1_002_20190630/01.jpg">
 <meta property="og:image" content="https://lix1051816102.github.io/assets/img/blog/1_002_20190630/02.jpg">
-<meta property="og:updated_time" content="2019-07-01T09:52:56.262Z">
+<meta property="og:updated_time" content="2019-07-01T12:51:57.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql语句的执行">
 <meta name="twitter:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  一、mysql执行1.1、执行语句mysql数据库在做优化的时候，往往需要知道SQL语句的执行顺序才能够更好的进行优化。首先mysql有以下执行语句：from、join、on、where、group by、having、select、distinct、order by、limit。 在这里关于join语句简单介绍一下join的原理，参考自">
@@ -183,7 +183,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2019/06/30/1-002/" class="archive-article-date">
-  	<time datetime="2019-06-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
+  	<time datetime="2019-06-30T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
         
       </header>
@@ -195,7 +195,9 @@ var _hmt = _hmt || [];
 <h1 id="一、mysql执行"><a href="#一、mysql执行" class="headerlink" title="一、mysql执行"></a>一、mysql执行</h1><h2 id="1-1、执行语句"><a href="#1-1、执行语句" class="headerlink" title="1.1、执行语句"></a>1.1、执行语句</h2><p>mysql数据库在做优化的时候，往往需要知道SQL语句的执行顺序才能够更好的进行优化。首先mysql有以下执行语句：<br>from、join、on、where、group by、having、select、distinct、order by、limit。</p>
 <p>在这里关于join语句简单介绍一下join的原理，参考自<a href="https://www.cnblogs.com/fudashi/p/7506877.html" target="_blank" rel="noopener">https://www.cnblogs.com/fudashi/p/7506877.html</a>，个人觉得总结的很到位：</p>
 <blockquote>
-<p>下面是join语句的数学集合表示：<br><img src="/assets/img/blog/1_002_20190630/01.jpg" alt="图1"><br><br><br>join语句的连接算法有Nested Loop Join(NLJ)循环嵌套算法和Block Nested Loop Join(BNLJ)块循环嵌套算法，详细的算法说明请参考上面的引用链接；<br>至于如何提高join的效率，可以参考下面的原则：</p>
+<p>下面是join语句的数学集合表示：<br><br></p>
+<p><div align="center"><img src="/assets/img/blog/1_002_20190630/01.jpg" alt="图1" width="80%" height="80%"></div><br></p>
+<p>join语句的连接算法有Nested Loop Join(NLJ)循环嵌套算法和Block Nested Loop Join(BNLJ)块循环嵌套算法，详细的算法说明请参考上面的引用链接；至于如何提高join的效率，可以参考下面的原则：</p>
 <ul>
 <li>小表驱动大表能够减少内循环的次数从而提高连接效率；</li>
 <li>设置合理的缓冲区大小能够提高连接效率；</li>
@@ -221,7 +223,9 @@ var _hmt = _hmt || [];
 <li>执行”order by sumScore”语句，对上一步结果根据sumScore进行升序排列；</li>
 <li>执行”limit 0, 5”语句，对上一步结果进行分页操作；</li>
 </ol>
-<h2 id="1-3、执行计划"><a href="#1-3、执行计划" class="headerlink" title="1.3、执行计划"></a>1.3、执行计划</h2><p>mysql中使用explain命令获取SQL语句的执行计划，例如上述的查询1，执行explain后的结果如下：<br><img src="/assets/img/blog/1_002_20190630/02.jpg" alt="图2"><br><br><br>下面针对explain输出结果字段进行说明，参考自<a href="https://yq.aliyun.com/articles/602513/" target="_blank" rel="noopener">https://yq.aliyun.com/articles/602513/</a>：<br><strong>id:</strong> select查询序列号，id相同，执行顺序由上至下；id不同，id值越大优先级越高；<br><strong>select_type:</strong> 查询数据的操作类型，有如下几种：</p>
+<h2 id="1-3、执行计划"><a href="#1-3、执行计划" class="headerlink" title="1.3、执行计划"></a>1.3、执行计划</h2><p>mysql中使用explain命令获取SQL语句的执行计划，例如上述的查询1，执行explain后的结果如下：</p>
+<p><div align="center"><img src="/assets/img/blog/1_002_20190630/02.jpg" alt="图2"></div><br>下面针对explain输出结果字段进行说明，参考自<a href="https://yq.aliyun.com/articles/602513/" target="_blank" rel="noopener">https://yq.aliyun.com/articles/602513/</a>：</p>
+<p><strong>id:</strong> select查询序列号，id相同，执行顺序由上至下；id不同，id值越大优先级越高；<br><strong>select_type:</strong> 查询数据的操作类型，有如下几种：</p>
 <table>
 <thead>
 <tr>
@@ -379,7 +383,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -395,7 +399,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
         		</li>
       		
 		</ul>
@@ -464,6 +468,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2019/07/01/1-003/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java面试整理（自用）
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/04/02/1-001/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">如何在MAC系统下从无到有搭建起自己的个人博客（GITHUB+HEXO）</div>
@@ -521,7 +534,7 @@ var _hmt = _hmt || [];
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
   var gitment = new Gitment({
-    id: "Sun Jun 30 2019 00:00:00 GMT+0800",
+    id: "Sun Jun 30 2019 21:00:00 GMT+0800",
     owner: 'lix1051816102',
     repo: 'hexo-blog-comment',
     oauth: {
@@ -625,11 +638,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodeJS</a>
+                <a href="javascript:void(0)" class="js-tag color1">《Spring Boot实战》</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">《Spring微服务实战》</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
