@@ -6,26 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.elfli.cn">
-  <title>《Spring Boot实战》读书笔记一 | Elf&#39;s Blog</title>
+  <title>《Head First设计模式》读书笔记一 | Elf&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！   Spring Boot是什么？直接引用书中的内容，最重要的就是以下四个核心：  自动配置：针对Spring应用常见的应用功能，Spring Boot能自动提供相关配置； 起步依赖：告诉Spring Boot需要什么功能，它就能自动引入需要的库； 命令行界面：Spring Boot的可选特性，借此只需写代码就能完成完整的应用程序，无需传统">
-<meta name="keywords" content="《Spring Boot实战》,读书笔记">
+  <meta name="description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  一、迭代器（Iterator Pattern）和组合模式（Composite Pattern）1、迭代器模式 定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也">
+<meta name="keywords" content="读书笔记,《Head First设计模式》">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Spring Boot实战》读书笔记一">
-<meta property="og:url" content="https://blog.elfli.cn/2019/07/01/1-004/index.html">
+<meta property="og:title" content="《Head First设计模式》读书笔记一">
+<meta property="og:url" content="https://blog.elfli.cn/2020/07/13/1-008/index.html">
 <meta property="og:site_name" content="Elf&#39;s Blog">
-<meta property="og:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！   Spring Boot是什么？直接引用书中的内容，最重要的就是以下四个核心：  自动配置：针对Spring应用常见的应用功能，Spring Boot能自动提供相关配置； 起步依赖：告诉Spring Boot需要什么功能，它就能自动引入需要的库； 命令行界面：Spring Boot的可选特性，借此只需写代码就能完成完整的应用程序，无需传统">
+<meta property="og:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  一、迭代器（Iterator Pattern）和组合模式（Composite Pattern）1、迭代器模式 定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_004_20190701/01.jpg">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_004_20190701/02.jpg">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_004_20190701/03.jpg">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_004_20190701/04.jpg">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_004_20190701/05.jpg">
-<meta property="og:updated_time" content="2019-07-01T13:53:05.629Z">
+<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/01.jpg">
+<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/02.jpg">
+<meta property="og:updated_time" content="2020-07-14T12:55:34.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Spring Boot实战》读书笔记一">
-<meta name="twitter:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！   Spring Boot是什么？直接引用书中的内容，最重要的就是以下四个核心：  自动配置：针对Spring应用常见的应用功能，Spring Boot能自动提供相关配置； 起步依赖：告诉Spring Boot需要什么功能，它就能自动引入需要的库； 命令行界面：Spring Boot的可选特性，借此只需写代码就能完成完整的应用程序，无需传统">
-<meta name="twitter:image" content="https://blog.elfli.cn/assets/img/blog/1_004_20190701/01.jpg">
+<meta name="twitter:title" content="《Head First设计模式》读书笔记一">
+<meta name="twitter:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  一、迭代器（Iterator Pattern）和组合模式（Composite Pattern）1、迭代器模式 定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也">
+<meta name="twitter:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Elf&#39;s Blog" type="application/atom+xml">
   
@@ -173,20 +170,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1-004" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-1-008" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      《Spring Boot实战》读书笔记一
+      《Head First设计模式》读书笔记一
     </h1>
   
 
         
-        <a href="/2019/07/01/1-004/" class="archive-article-date">
-  	<time datetime="2019-07-01T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+        <a href="/2020/07/13/1-008/" class="archive-article-date">
+  	<time datetime="2020-07-13T11:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
 </a>
         
       </header>
@@ -195,39 +192,19 @@ var _hmt = _hmt || [];
       
         <p><strong><em>声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！</em></strong></p>
 <hr>
+<h1 id="一、迭代器（Iterator-Pattern）和组合模式（Composite-Pattern）"><a href="#一、迭代器（Iterator-Pattern）和组合模式（Composite-Pattern）" class="headerlink" title="一、迭代器（Iterator Pattern）和组合模式（Composite Pattern）"></a>一、迭代器（Iterator Pattern）和组合模式（Composite Pattern）</h1><h2 id="1、迭代器模式"><a href="#1、迭代器模式" class="headerlink" title="1、迭代器模式"></a>1、迭代器模式</h2><blockquote>
+<p>定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。<br>优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也让责任各得其所。</p>
+</blockquote>
+<hr>
 <blockquote>
-<p>Spring Boot是什么？直接引用书中的内容，最重要的就是以下四个核心：</p>
+<p>对应的设计原则：</p>
 <ul>
-<li>自动配置：针对Spring应用常见的应用功能，Spring Boot能自动提供相关配置；</li>
-<li>起步依赖：告诉Spring Boot需要什么功能，它就能自动引入需要的库；</li>
-<li>命令行界面：Spring Boot的可选特性，借此只需写代码就能完成完整的应用程序，无需传统的项目构建；</li>
-<li>Actuator：能够深入运行中的Spring Boot应用程序，用来监控和度量Spring Boot应用程序。</li>
+<li>单一责任原则：一个类应该只有一个引起变化的原因</li>
 </ul>
 </blockquote>
-<h1 id="一、入门（第一章）"><a href="#一、入门（第一章）" class="headerlink" title="一、入门（第一章）"></a>一、入门（第一章）</h1><h2 id="1-1、自动配置"><a href="#1-1、自动配置" class="headerlink" title="1.1、自动配置"></a>1.1、自动配置</h2><p>以Spring的数据库配置为例来简单说明一下，传统的Spring项目一定要在应用程序上下文配置JdbcTemplate这个Bean，配置如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> JdbcTemplate <span class="title">jdbcTemplate</span><span class="params">(DataSource dataSource)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> JdbcTemplate(dataSource);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    DriverManagerDataSource dataSource = <span class="keyword">new</span> DriverManagerDataSource();</span><br><span class="line">    dataSource.setUrl(env.getProperty(<span class="string">"url"</span>));</span><br><span class="line">    dataSource.setDriverClassName(env.getProperty(<span class="string">"driverName"</span>));</span><br><span class="line">    dataSource.setUsername(env.getProperty(<span class="string">"datausername"</span>));</span><br><span class="line">    dataSource.setPassword(env.getProperty(<span class="string">"password"</span>));</span><br><span class="line">    <span class="keyword">return</span> dataSource;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Spring Boot会对这些常见配置进行自动配置，如果Spring Boot在应用程序的Classpath里发现JdbcTemplate，那么它会自定配置一个JdbcTemplate的Bean，接下来只需要在application.yml文件中配置一下数据库的相关连接信息就行了。</p>
-<h2 id="1-2、起步依赖"><a href="#1-2、起步依赖" class="headerlink" title="1.2、起步依赖"></a>1.2、起步依赖</h2><blockquote>
-<p>Spring Boot利用Maven和Gradle的传递依赖特性，把常用库聚合在一起，组成了几个为特定功能而定制的依赖。<br>举个例子，我们如果想要构建一个Spring的Web应用程序，传统的Spring需要引入spring-core、spring-web、spring-webmvc等很多依赖才行，而且需要自己管理每一个依赖的版本。但是如果使用Spring Boot的起步依赖，就只需要添加spring-boot-starter-web即可，而且不需要担心版本不兼容的问题，这些都是经过严格测试的。</p>
-</blockquote>
-<h2 id="1-3、命令行界面"><a href="#1-3、命令行界面" class="headerlink" title="1.3、命令行界面"></a>1.3、命令行界面</h2><blockquote>
-<p>Spring Boot CLI利用了自动配置和起步依赖，可以让开发者只专注于代码本身。</p>
-</blockquote>
-<h2 id="1-4、Actuator"><a href="#1-4、Actuator" class="headerlink" title="1.4、Actuator"></a>1.4、Actuator</h2><blockquote>
-<p>Actuator可以窥探到应用程序内部的细节如下：</p>
-<ul>
-<li>Spring应用程序上下文里配置的Bean</li>
-<li>Spring Boot的自动配置做出的决策</li>
-<li>应用程序取到的环境变量、系统属性、配置属性和命令行参数</li>
-<li>应用程序里线程的当前状态</li>
-<li>应用程序最近处理过的HTTP请求的追踪情况</li>
-<li>各种和内存用量、垃圾回收、Web请求以及数据源用量相关的指标</li>
-</ul>
-</blockquote>
-<h2 id="1-5、idea创建Spring-Boot项目"><a href="#1-5、idea创建Spring-Boot项目" class="headerlink" title="1.5、idea创建Spring Boot项目"></a>1.5、idea创建Spring Boot项目</h2><blockquote>
-<p>第一步：使用Spring Initializr<br><br></p>
-<div align="center"><img src="/assets/img/blog/1_004_20190701/01.jpg" alt="图1" width="80%" height="80%"></div><br>第二步：填写项目信息<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/02.jpg" alt="图2" width="80%" height="80%"></div><br>第三步：选择项目依赖<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/03.jpg" alt="图3" width="80%" height="80%"></div><br>第四步：项目命名并完成<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/04.jpg" alt="图4" width="80%" height="80%"></div><br>最终项目结构如下：<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/05.jpg" alt="图5" width="80%" height="80%"></div>
-</blockquote>
-<h1 id="二、总结"><a href="#二、总结" class="headerlink" title="二、总结"></a>二、总结</h1><p>以上是Spring Boot的核心功能整理，以及如何在idea中创建Spring Boot项目，对书中的重点内容进行了提取，仅供参考！</p>
+<h2 id="1-1、示例程序类图"><a href="#1-1、示例程序类图" class="headerlink" title="1.1、示例程序类图"></a>1.1、示例程序类图</h2><div align="center"><img src="/assets/img/blog/1_008_20200713/01.jpg" alt="图1" width="80%" height="80%"></div>
+
+<h2 id="1-2、模式类图"><a href="#1-2、模式类图" class="headerlink" title="1.2、模式类图"></a>1.2、模式类图</h2><div align="center"><img src="/assets/img/blog/1_008_20200713/02.jpg" alt="图2" width="80%" height="80%"></div>
 
       
 
@@ -272,11 +249,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">《Spring Boot实战》</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《Head First设计模式》</a>
         		</li>
       		
 		</ul>
@@ -343,7 +320,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://blog.elfli.cn/2019/07/01/1-004/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://blog.elfli.cn/2020/07/13/1-008/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -357,18 +334,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/07/01/1-005/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/13/1-007/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          《Spring微服务实战》读书笔记一
+          《Head First设计模式》读书笔记一
         
       </div>
     </a>
   
   
-    <a href="/2019/07/01/1-003/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面试整理（自用）</div>
+    <a href="/2019/07/02/1-006/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《深入理解Java虚拟机》读书笔记一</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -395,7 +372,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、入门（第一章）"><span class="toc-number">1.</span> <span class="toc-text">一、入门（第一章）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1、自动配置"><span class="toc-number">1.1.</span> <span class="toc-text">1.1、自动配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2、起步依赖"><span class="toc-number">1.2.</span> <span class="toc-text">1.2、起步依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3、命令行界面"><span class="toc-number">1.3.</span> <span class="toc-text">1.3、命令行界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4、Actuator"><span class="toc-number">1.4.</span> <span class="toc-text">1.4、Actuator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5、idea创建Spring-Boot项目"><span class="toc-number">1.5.</span> <span class="toc-text">1.5、idea创建Spring Boot项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、总结"><span class="toc-number">2.</span> <span class="toc-text">二、总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、迭代器（Iterator-Pattern）和组合模式（Composite-Pattern）"><span class="toc-number">1.</span> <span class="toc-text">一、迭代器（Iterator Pattern）和组合模式（Composite Pattern）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、迭代器模式"><span class="toc-number">1.1.</span> <span class="toc-text">1、迭代器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1、示例程序类图"><span class="toc-number">1.2.</span> <span class="toc-text">1.1、示例程序类图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2、模式类图"><span class="toc-number">1.3.</span> <span class="toc-text">1.2、模式类图</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -420,7 +397,7 @@ var _hmt = _hmt || [];
 <script src="https://elfli.cn/gitment/gitment.browser.js"></script>
 <script>
   var gitment = new Gitment({
-    id: "Mon Jul 01 2019 21:00:00 GMT+0800",
+    id: "Mon Jul 13 2020 19:39:00 GMT+0800",
     owner: 'lix1051816102',
     repo: 'hexo-blog-comment',
     oauth: {
