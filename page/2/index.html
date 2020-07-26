@@ -168,6 +168,219 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-1-004" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/01/1-004/">《Spring Boot实战》读书笔记一</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/01/1-004/" class="archive-article-date">
+  	<time datetime="2019-07-01T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！</em></strong></p>
+<hr>
+<blockquote>
+<p>Spring Boot是什么？直接引用书中的内容，最重要的就是以下四个核心：</p>
+<ul>
+<li>自动配置：针对Spring应用常见的应用功能，Spring Boot能自动提供相关配置；</li>
+<li>起步依赖：告诉Spring Boot需要什么功能，它就能自动引入需要的库；</li>
+<li>命令行界面：Spring Boot的可选特性，借此只需写代码就能完成完整的应用程序，无需传统的项目构建；</li>
+<li>Actuator：能够深入运行中的Spring Boot应用程序，用来监控和度量Spring Boot应用程序。</li>
+</ul>
+</blockquote>
+<h1 id="一、入门（第一章）"><a href="#一、入门（第一章）" class="headerlink" title="一、入门（第一章）"></a>一、入门（第一章）</h1><h2 id="1-1、自动配置"><a href="#1-1、自动配置" class="headerlink" title="1.1、自动配置"></a>1.1、自动配置</h2><p>以Spring的数据库配置为例来简单说明一下，传统的Spring项目一定要在应用程序上下文配置JdbcTemplate这个Bean，配置如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> JdbcTemplate <span class="title">jdbcTemplate</span><span class="params">(DataSource dataSource)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> JdbcTemplate(dataSource);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    DriverManagerDataSource dataSource = <span class="keyword">new</span> DriverManagerDataSource();</span><br><span class="line">    dataSource.setUrl(env.getProperty(<span class="string">"url"</span>));</span><br><span class="line">    dataSource.setDriverClassName(env.getProperty(<span class="string">"driverName"</span>));</span><br><span class="line">    dataSource.setUsername(env.getProperty(<span class="string">"datausername"</span>));</span><br><span class="line">    dataSource.setPassword(env.getProperty(<span class="string">"password"</span>));</span><br><span class="line">    <span class="keyword">return</span> dataSource;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Spring Boot会对这些常见配置进行自动配置，如果Spring Boot在应用程序的Classpath里发现JdbcTemplate，那么它会自定配置一个JdbcTemplate的Bean，接下来只需要在application.yml文件中配置一下数据库的相关连接信息就行了。</p>
+<h2 id="1-2、起步依赖"><a href="#1-2、起步依赖" class="headerlink" title="1.2、起步依赖"></a>1.2、起步依赖</h2><blockquote>
+<p>Spring Boot利用Maven和Gradle的传递依赖特性，把常用库聚合在一起，组成了几个为特定功能而定制的依赖。<br>举个例子，我们如果想要构建一个Spring的Web应用程序，传统的Spring需要引入spring-core、spring-web、spring-webmvc等很多依赖才行，而且需要自己管理每一个依赖的版本。但是如果使用Spring Boot的起步依赖，就只需要添加spring-boot-starter-web即可，而且不需要担心版本不兼容的问题，这些都是经过严格测试的。</p>
+</blockquote>
+<h2 id="1-3、命令行界面"><a href="#1-3、命令行界面" class="headerlink" title="1.3、命令行界面"></a>1.3、命令行界面</h2><blockquote>
+<p>Spring Boot CLI利用了自动配置和起步依赖，可以让开发者只专注于代码本身。</p>
+</blockquote>
+<h2 id="1-4、Actuator"><a href="#1-4、Actuator" class="headerlink" title="1.4、Actuator"></a>1.4、Actuator</h2><blockquote>
+<p>Actuator可以窥探到应用程序内部的细节如下：</p>
+<ul>
+<li>Spring应用程序上下文里配置的Bean</li>
+<li>Spring Boot的自动配置做出的决策</li>
+<li>应用程序取到的环境变量、系统属性、配置属性和命令行参数</li>
+<li>应用程序里线程的当前状态</li>
+<li>应用程序最近处理过的HTTP请求的追踪情况</li>
+<li>各种和内存用量、垃圾回收、Web请求以及数据源用量相关的指标</li>
+</ul>
+</blockquote>
+<h2 id="1-5、idea创建Spring-Boot项目"><a href="#1-5、idea创建Spring-Boot项目" class="headerlink" title="1.5、idea创建Spring Boot项目"></a>1.5、idea创建Spring Boot项目</h2><blockquote>
+<p>第一步：使用Spring Initializr<br><br></p>
+<div align="center"><img src="/assets/img/blog/1_004_20190701/01.jpg" alt="图1" width="80%" height="80%"></div><br>第二步：填写项目信息<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/02.jpg" alt="图2" width="80%" height="80%"></div><br>第三步：选择项目依赖<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/03.jpg" alt="图3" width="80%" height="80%"></div><br>第四步：项目命名并完成<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/04.jpg" alt="图4" width="80%" height="80%"></div><br>最终项目结构如下：<br><br><div align="center"><img src="/assets/img/blog/1_004_20190701/05.jpg" alt="图5" width="80%" height="80%"></div>
+</blockquote>
+<h1 id="二、总结"><a href="#二、总结" class="headerlink" title="二、总结"></a>二、总结</h1><p>以上是Spring Boot的核心功能整理，以及如何在idea中创建Spring Boot项目，对书中的重点内容进行了提取，仅供参考！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">《Spring Boot实战》</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/01/1-004/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1-003" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/01/1-003/">Java面试整理（自用）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/01/1-003/" class="archive-article-date">
+  	<time datetime="2019-07-01T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！</em></strong></p>
+<hr>
+<h2 id="IO-NIO"><a href="#IO-NIO" class="headerlink" title="IO/NIO"></a>IO/NIO</h2><h2 id="多线程、线程池"><a href="#多线程、线程池" class="headerlink" title="多线程、线程池"></a>多线程、线程池</h2><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="JDK和Cglib代理"><a href="#JDK和Cglib代理" class="headerlink" title="JDK和Cglib代理"></a>JDK和Cglib代理</h2><h2 id="JDK和Tomcat类加载机制、线程上下文类加载器"><a href="#JDK和Tomcat类加载机制、线程上下文类加载器" class="headerlink" title="JDK和Tomcat类加载机制、线程上下文类加载器"></a>JDK和Tomcat类加载机制、线程上下文类加载器</h2><h2 id="JVM的GC、锁机制、性能监控和调优"><a href="#JVM的GC、锁机制、性能监控和调优" class="headerlink" title="JVM的GC、锁机制、性能监控和调优"></a>JVM的GC、锁机制、性能监控和调优</h2><h2 id="Spring实现原理、注解、MVC模式"><a href="#Spring实现原理、注解、MVC模式" class="headerlink" title="Spring实现原理、注解、MVC模式"></a>Spring实现原理、注解、MVC模式</h2><h2 id="Mybatis实现原理、动态SQL"><a href="#Mybatis实现原理、动态SQL" class="headerlink" title="Mybatis实现原理、动态SQL"></a>Mybatis实现原理、动态SQL</h2><h2 id="Redis面试题"><a href="#Redis面试题" class="headerlink" title="Redis面试题"></a>Redis面试题</h2><h2 id="消息中间件面试题"><a href="#消息中间件面试题" class="headerlink" title="消息中间件面试题"></a>消息中间件面试题</h2><h2 id="数据库分库分表"><a href="#数据库分库分表" class="headerlink" title="数据库分库分表"></a>数据库分库分表</h2><h2 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h2><h2 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h2><h2 id="mysql执行顺序、执行计划、索引、调优"><a href="#mysql执行顺序、执行计划、索引、调优" class="headerlink" title="mysql执行顺序、执行计划、索引、调优"></a>mysql执行顺序、执行计划、索引、调优</h2><h2 id="Docker容器技术"><a href="#Docker容器技术" class="headerlink" title="Docker容器技术"></a>Docker容器技术</h2><h2 id="分布式微服务"><a href="#分布式微服务" class="headerlink" title="分布式微服务"></a>分布式微服务</h2><h2 id="Java常用加密算法"><a href="#Java常用加密算法" class="headerlink" title="Java常用加密算法"></a>Java常用加密算法</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/01/1-003/">More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-1-002" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -181,7 +394,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2019/06/30/1-002/" class="archive-article-date">
-  	<time datetime="2019-06-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
+  	<time datetime="2019-06-30T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
         
       </header>
@@ -418,7 +631,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2019/04/02/1-001/" class="archive-article-date">
-  	<time datetime="2019-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
+  	<time datetime="2019-04-02T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
 </a>
         
       </header>

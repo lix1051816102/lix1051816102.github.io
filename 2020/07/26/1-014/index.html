@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://blog.elfli.cn">
-  <title>《Head First设计模式》读书笔记二 | Elf&#39;s Blog</title>
+  <title>《Head First设计模式》读书笔记八 | Elf&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  迭代器（Iterator Pattern）和组合模式（Composite Pattern）一、迭代器模式 定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也让责">
+  <meta name="description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  适配器模式（Adapter Pattern）和外观模式（Facade Pattern）一、适配器模式 定义：适配器模式将一个类的接口，转换成客户期望的另一个接口。适配器让原本接口不兼容的类可以合作无间。优点：这个模式可以通过创建适配器进行接口转换，让不兼容的接口变得兼容，这可以让客户从实现的接口中解耦。    对应的设计原则：  最少知识">
 <meta name="keywords" content="读书笔记,《Head First设计模式》">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Head First设计模式》读书笔记二">
-<meta property="og:url" content="https://blog.elfli.cn/2020/07/13/1-008/index.html">
+<meta property="og:title" content="《Head First设计模式》读书笔记八">
+<meta property="og:url" content="https://blog.elfli.cn/2020/07/26/1-014/index.html">
 <meta property="og:site_name" content="Elf&#39;s Blog">
-<meta property="og:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  迭代器（Iterator Pattern）和组合模式（Composite Pattern）一、迭代器模式 定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也让责">
+<meta property="og:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  适配器模式（Adapter Pattern）和外观模式（Facade Pattern）一、适配器模式 定义：适配器模式将一个类的接口，转换成客户期望的另一个接口。适配器让原本接口不兼容的类可以合作无间。优点：这个模式可以通过创建适配器进行接口转换，让不兼容的接口变得兼容，这可以让客户从实现的接口中解耦。    对应的设计原则：  最少知识">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/01.jpg">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/02.jpg">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/03.jpg">
-<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/04.jpg">
-<meta property="og:updated_time" content="2020-07-26T08:28:06.549Z">
+<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_014_20200726/01.jpg">
+<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_014_20200726/02.jpg">
+<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_014_20200726/03.jpg">
+<meta property="og:image" content="https://blog.elfli.cn/assets/img/blog/1_014_20200726/04.jpg">
+<meta property="og:updated_time" content="2020-07-26T08:46:30.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Head First设计模式》读书笔记二">
-<meta name="twitter:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  迭代器（Iterator Pattern）和组合模式（Composite Pattern）一、迭代器模式 定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也让责">
-<meta name="twitter:image" content="https://blog.elfli.cn/assets/img/blog/1_008_20200713/01.jpg">
+<meta name="twitter:title" content="《Head First设计模式》读书笔记八">
+<meta name="twitter:description" content="声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！  适配器模式（Adapter Pattern）和外观模式（Facade Pattern）一、适配器模式 定义：适配器模式将一个类的接口，转换成客户期望的另一个接口。适配器让原本接口不兼容的类可以合作无间。优点：这个模式可以通过创建适配器进行接口转换，让不兼容的接口变得兼容，这可以让客户从实现的接口中解耦。    对应的设计原则：  最少知识">
+<meta name="twitter:image" content="https://blog.elfli.cn/assets/img/blog/1_014_20200726/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Elf&#39;s Blog" type="application/atom+xml">
   
@@ -172,20 +172,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1-008" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-1-014" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      《Head First设计模式》读书笔记二
+      《Head First设计模式》读书笔记八
     </h1>
   
 
         
-        <a href="/2020/07/13/1-008/" class="archive-article-date">
-  	<time datetime="2020-07-13T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
+        <a href="/2020/07/26/1-014/" class="archive-article-date">
+  	<time datetime="2020-07-26T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-26</time>
 </a>
         
       </header>
@@ -194,34 +194,33 @@ var _hmt = _hmt || [];
       
         <p><strong><em>声明：文章含有搬运部分，若有侵权请告知，转载请注明出处！</em></strong></p>
 <hr>
-<h1 id="迭代器（Iterator-Pattern）和组合模式（Composite-Pattern）"><a href="#迭代器（Iterator-Pattern）和组合模式（Composite-Pattern）" class="headerlink" title="迭代器（Iterator Pattern）和组合模式（Composite Pattern）"></a>迭代器（Iterator Pattern）和组合模式（Composite Pattern）</h1><h2 id="一、迭代器模式"><a href="#一、迭代器模式" class="headerlink" title="一、迭代器模式"></a>一、迭代器模式</h2><blockquote>
-<p>定义：迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。<br>优点：迭代器模式让我们能游走于聚合内的每一个元素，而又不暴露其内部的表示。把游走的任务放在迭代器上，而不是聚合上。这样简化了聚合的接口和实现，也让责任各得其所。</p>
+<h1 id="适配器模式（Adapter-Pattern）和外观模式（Facade-Pattern）"><a href="#适配器模式（Adapter-Pattern）和外观模式（Facade-Pattern）" class="headerlink" title="适配器模式（Adapter Pattern）和外观模式（Facade Pattern）"></a>适配器模式（Adapter Pattern）和外观模式（Facade Pattern）</h1><h2 id="一、适配器模式"><a href="#一、适配器模式" class="headerlink" title="一、适配器模式"></a>一、适配器模式</h2><blockquote>
+<p>定义：适配器模式将一个类的接口，转换成客户期望的另一个接口。适配器让原本接口不兼容的类可以合作无间。<br>优点：这个模式可以通过创建适配器进行接口转换，让不兼容的接口变得兼容，这可以让客户从实现的接口中解耦。</p>
 </blockquote>
 <hr>
 <blockquote>
 <p>对应的设计原则：</p>
 <ul>
-<li>单一责任原则：一个类应该只有一个引起变化的原因</li>
+<li>最少知识原则（Least Knowledge Principle）：只和你的密友谈话，也被成为得墨忒耳法则（Law of Demeter）</li>
 </ul>
 </blockquote>
-<h2 id="1-1、示例程序类图"><a href="#1-1、示例程序类图" class="headerlink" title="1.1、示例程序类图"></a>1.1、示例程序类图</h2><div align="center"><img src="/assets/img/blog/1_008_20200713/01.jpg" alt="图1" width="80%" height="80%"></div>
+<h2 id="1-1、示例程序类图"><a href="#1-1、示例程序类图" class="headerlink" title="1.1、示例程序类图"></a>1.1、示例程序类图</h2><div align="center"><img src="/assets/img/blog/1_014_20200726/01.jpg" alt="图1" width="80%" height="80%"></div>
 
-<h2 id="1-2、模式类图"><a href="#1-2、模式类图" class="headerlink" title="1.2、模式类图"></a>1.2、模式类图</h2><div align="center"><img src="/assets/img/blog/1_008_20200713/02.jpg" alt="图2" width="80%" height="80%"></div>
+<h2 id="1-1、模式类图"><a href="#1-1、模式类图" class="headerlink" title="1.1、模式类图"></a>1.1、模式类图</h2><div align="center"><img src="/assets/img/blog/1_014_20200726/02.jpg" alt="图2" width="80%" height="80%"></div>
 
-<h2 id="二、组合模式"><a href="#二、组合模式" class="headerlink" title="二、组合模式"></a>二、组合模式</h2><blockquote>
-<p>定义：组合模式允许你将对象组合成树形结构来表现”整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合。<br>优点：组合模式让我们能用树形方式创建对象的结构，树里面包含了组合以及个别的对象。使用组合结构，我们能把相同的操作应用在组合和个别对象上。换句话说，在大多数情况下，我们可以忽略对象组合和个别对象之间的差别。</p>
+<h2 id="二、外观模式"><a href="#二、外观模式" class="headerlink" title="二、外观模式"></a>二、外观模式</h2><blockquote>
+<p>定义：外观模式提供了一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用。</p>
 </blockquote>
 <hr>
 <blockquote>
 <p>对应的设计原则：</p>
 <ul>
-<li>单一责任原则：一个类应该只有一个引起变化的原因</li>
+<li>最少知识原则（Least Knowledge Principle）：只和你的密友谈话，也被成为得墨忒耳法则（Law of Demeter）</li>
 </ul>
 </blockquote>
-<h2 id="2-1、示例程序类图"><a href="#2-1、示例程序类图" class="headerlink" title="2.1、示例程序类图"></a>2.1、示例程序类图</h2><div align="center"><img src="/assets/img/blog/1_008_20200713/03.jpg" alt="图3" width="80%" height="80%"></div>
+<h2 id="2-1、示例程序类图"><a href="#2-1、示例程序类图" class="headerlink" title="2.1、示例程序类图"></a>2.1、示例程序类图</h2><div align="center"><img src="/assets/img/blog/1_014_20200726/03.jpg" alt="图3" width="80%" height="80%"></div>
 
-<h2 id="2-2、模式类图"><a href="#2-2、模式类图" class="headerlink" title="2.2、模式类图"></a>2.2、模式类图</h2><div align="center"><img src="/assets/img/blog/1_008_20200713/04.jpg" alt="图4" width="80%" height="80%"></div>
-
+<h2 id="2-2、模式类图"><a href="#2-2、模式类图" class="headerlink" title="2.2、模式类图"></a>2.2、模式类图</h2><div align="center"><img src="/assets/img/blog/1_014_20200726/04.jpg" alt="图4" width="80%" height="80%"></div>
       
 
       
@@ -336,7 +335,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://blog.elfli.cn/2020/07/13/1-008/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://blog.elfli.cn/2020/07/26/1-014/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -350,18 +349,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2020/07/18/1-009/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《Head First设计模式》读书笔记三
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/13/1-007/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《Head First设计模式》读书笔记一</div>
+    <a href="/2020/07/26/1-013/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《Head First设计模式》读书笔记七</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -388,7 +378,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#迭代器（Iterator-Pattern）和组合模式（Composite-Pattern）"><span class="toc-number">1.</span> <span class="toc-text">迭代器（Iterator Pattern）和组合模式（Composite Pattern）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、迭代器模式"><span class="toc-number">1.1.</span> <span class="toc-text">一、迭代器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1、示例程序类图"><span class="toc-number">1.2.</span> <span class="toc-text">1.1、示例程序类图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2、模式类图"><span class="toc-number">1.3.</span> <span class="toc-text">1.2、模式类图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、组合模式"><span class="toc-number">1.4.</span> <span class="toc-text">二、组合模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1、示例程序类图"><span class="toc-number">1.5.</span> <span class="toc-text">2.1、示例程序类图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2、模式类图"><span class="toc-number">1.6.</span> <span class="toc-text">2.2、模式类图</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#适配器模式（Adapter-Pattern）和外观模式（Facade-Pattern）"><span class="toc-number">1.</span> <span class="toc-text">适配器模式（Adapter Pattern）和外观模式（Facade Pattern）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、适配器模式"><span class="toc-number">1.1.</span> <span class="toc-text">一、适配器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1、示例程序类图"><span class="toc-number">1.2.</span> <span class="toc-text">1.1、示例程序类图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1、模式类图"><span class="toc-number">1.3.</span> <span class="toc-text">1.1、模式类图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、外观模式"><span class="toc-number">1.4.</span> <span class="toc-text">二、外观模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1、示例程序类图"><span class="toc-number">1.5.</span> <span class="toc-text">2.1、示例程序类图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2、模式类图"><span class="toc-number">1.6.</span> <span class="toc-text">2.2、模式类图</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -413,7 +403,7 @@ var _hmt = _hmt || [];
 <script src="https://elfli.cn/gitment/gitment.browser.js"></script>
 <script>
   var gitment = new Gitment({
-    id: "Mon Jul 13 2020 18:00:00 GMT+0800",
+    id: "Sun Jul 26 2020 18:00:00 GMT+0800",
     owner: 'lix1051816102',
     repo: 'hexo-blog-comment',
     oauth: {
